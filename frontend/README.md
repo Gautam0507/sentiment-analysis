@@ -1,29 +1,76 @@
-# Create T3 App
+![alt text](thumbnail.png)
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+[https://youtu.be/Myo5kizoSk0](https://youtu.be/Myo5kizoSk0)
 
-## What's next? How do I make an app with this?
+## Overview
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Hi 🤙 In this video, you'll learn how to build a multimodal AI model using PyTorch. The model will accept a video as its input, and predict its sentiment and emotion. When training the model, you'll build features like text, video, and audio encoding, multimodal fusion, and emotion and sentiment classification. After training and deploying the model, you'll build a SaaS around your trained model, where users can run inference on their videos through your API. You'll set up invocation of the deployed model with SageMaker Endpoints, and manage the monthly quotas users have. The SaaS will be built with technologies such as Next.js, React, Tailwind, and Auth.js and is based off of the T3 Stack. You'll be able to build along with me from start to finish.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Features:
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- 🎥 Video sentiment analysis
+- 📺 Video frame extraction
+- 🎙️ Audio feature extraction
+- 📝 Text embedding with BERT
+- 🔗 Multimodal fusion
+- 📊 Emotion and sentiment classification
+- 🚀 Model training and evaluation
+- 📈 TensorBoard logging
+- 🚀 AWS S3 for video storage
+- 🤖 AWS SageMaker endpoint integration
+- 🔐 User authentication with Auth.js
+- 🔑 API key management
+- 📊 Usage quota tracking
+- 📈 Real-time analysis results
+- 🎨 Modern UI with Tailwind CSS
 
-## Learn More
+## Setup
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+Follow these steps to install and set up the SaaS project:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Installation
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+1. Clone the repository
 
-## How do I deploy this?
+```bash
+git clone https://github.com/yourusername/ai-video-sentiment-saas.git
+cd ai-video-sentiment-saas
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Configure environment variables in .env:
+
+```
+DATABASE_URL="your-database-url"
+AUTH_SECRET="your-auth-secret"
+AWS_REGION="your-aws-region"
+AWS_ACCESS_KEY_ID="your-access-key"
+AWS_SECRET_ACCESS_KEY="your-secret-key"
+```
+
+4. Initialize the database:
+
+```
+npm run db:generate
+npm run db:push
+```
+
+## Running the app
+
+### Development
+
+```
+npm run dev
+```
+
+### Production
+
+```
+npm run build
+npm start
+```
